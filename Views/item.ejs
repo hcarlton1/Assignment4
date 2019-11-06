@@ -1,0 +1,33 @@
+<% include ./partials/header.ejs %>
+<% include ./partials/side-navigation.ejs %>
+
+<!-- start the main section -->
+<section>
+  <img src="/assets/images/<%= data.code %>.jpeg" width="250" alt="img">
+    <p1>
+        <%= data.name %>
+    </p1>
+    <br>
+    <p>
+        <%=data.description %>
+    </p>
+    <form action="/profile" method="post">
+
+        <input type="hidden" name="itemCode" value="<%= data.code %>" />
+        <input type="hidden" name="itemList" value="<%= data.code %>" />
+        <%# determines if item is in profile, if item from catalog is in profile only the 'save' button will be aviable.
+        If its not in profile both buttons are aviable %>
+        <% if(typeof data.inProfile != "undefined" && data.inProfile == false){ %>
+
+        <button type="submit" class="submitButton" name="action" value="save">Save it</button><%}%>
+        <button type="submit" class="submitButton" name="action" value="rate">Rate it</button>
+    </form>
+</section>
+
+<section>
+    <form action="/categories" method="get" id="float_left">
+        <input type="submit" value="Continue browsing">
+    </form>
+</section>
+
+<% include ./partials/footer.ejs %>

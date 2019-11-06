@@ -1,0 +1,31 @@
+<% include ./partials/header.ejs %>
+<% include ./partials/side-navigation.ejs %>
+
+
+
+<section>
+    <h1>Categories:</h1> <br>
+    <%
+      console.log("in catalog view")
+      %>
+      <%
+          for(var j=0; j< data.length;j++){
+      %>
+      <p1>
+          <%= data[j].categoryName %>
+
+      </p1>
+      <%
+          for(var i=0; i< data[j].items.length;i++){
+      %>
+      <p>
+          <a href="/categories/item/<%= data[j].items[i].code %>">
+              <%= data[j].items[i].name %>
+          </a>
+      </p>
+      <% } %>
+      <% } %>
+  </section>
+
+
+<% include ./partials/footer.ejs %>

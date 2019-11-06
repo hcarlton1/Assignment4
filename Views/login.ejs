@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+<% include ./partials/side-navigation.ejs %>
+
+<section>
+
+  <p> Welcome to HC Photography! </p>
+    <p> Login with your username and password to view your saved items. </p>
+
+      <form action ="/profile?action=submit" method="post " >
+          <div class = "container" >
+              <label for ="username"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required>
+
+              <label for="password"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login </button><!-- a tag for letting user sign in -->
+        </div>
+  </form>
+
+</section>
+
+<% include ./partials/footer.ejs %>
